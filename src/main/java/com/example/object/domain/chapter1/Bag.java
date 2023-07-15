@@ -1,4 +1,4 @@
-package com.example.object.domain;
+package com.example.object.domain.chapter1;
 
 public class Bag {
     private Long amount;

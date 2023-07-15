@@ -1,4 +1,4 @@
-package com.example.object.domain;
+package com.example.object.domain.chapter1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
