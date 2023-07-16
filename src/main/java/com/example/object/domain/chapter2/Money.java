@@ -6,10 +6,12 @@ public class Money {
     public static final Money ZERO = Money.wons(0);
     private final BigDecimal amount;
 
+    // 오버로딩
     public static Money wons(long amount) {
         return new Money(BigDecimal.valueOf(amount));
     }
 
+    // 오버로딩
     public static Money wons(double amount) {
         return new Money(BigDecimal.valueOf(amount));
     }
