@@ -20,6 +20,10 @@ public class Movie {
     }
 
     public Money calculateMovieFee(Screening screening) {
+        // 할인 정책이 없는 경우는 예외 케이스로 취급되기 때문에 지금까지 일관성 있던 협력 방식이 무너지게됨
+        if(discountPolicy == null) {
+            return fee;
+        }
         // 업캐스팅 = 자식 클래스가 부모 클래스를 대신하는 것
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
