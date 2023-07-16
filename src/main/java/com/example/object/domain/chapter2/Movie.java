@@ -27,4 +27,8 @@ public class Movie {
         // 업캐스팅 = 자식 클래스가 부모 클래스를 대신하는 것
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
+    
+    public void changeDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
 }
