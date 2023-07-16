@@ -39,4 +39,14 @@ class MovieTest {
         assertThat(titanic.getFee().isGreaterThanOrEqual(Money.wons(11000L))).isTrue();
     }
 
+    @Test
+    void noneDiscountPolicy() {
+        Movie starWars = new Movie("스타워즈",
+                Duration.ofMinutes(210),
+                Money.wons(10000L),
+                new NoneDiscountPolicy());
+
+        assertThat(starWars.getFee().isGreaterThanOrEqual(Money.wons(10000L))).isTrue();
+    }
+
 }
