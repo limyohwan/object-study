@@ -12,6 +12,7 @@ class MovieTest {
 
     @Test
     void amountDiscountPolicy() {
+        // Movie 인스턴스는 실행시점에 AmountDiscountPolicy 클래스 인스턴스에 의존
         Movie avatar = new Movie("아바타",
                 Duration.ofMinutes(120),
                 Money.wons(10000L),
@@ -26,6 +27,7 @@ class MovieTest {
 
     @Test
     void percentDiscountPolicy() {
+        // Movie 인스턴스는 실행시점에 PercentDiscountPolicy 클래스 인스턴스에 의존
         Movie titanic = new Movie("타이타닉",
                 Duration.ofMinutes(180),
                 Money.wons(11000L),
