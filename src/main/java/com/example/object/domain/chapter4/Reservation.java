@@ -1,6 +1,6 @@
 package com.example.object.domain.chapter4;
 
-import com.example.object.domain.chapter2.Customer;
+import com.example.object.domain.chapter4.Customer;
 import com.example.object.domain.chapter2.Money;
 
 public class Reservation {
