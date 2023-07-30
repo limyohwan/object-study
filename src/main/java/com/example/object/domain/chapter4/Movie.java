@@ -35,6 +35,7 @@ public class Movie {
         return movieType;
     }
 
+    // Movie 역시 내부 구현을 인터페이스에 노출 시킴
     public Money calculateAmountDiscountedFee() {
         if(movieType != MovieType.AMOUNT_DISCOUNT) {
             throw new IllegalArgumentException();
@@ -59,6 +60,7 @@ public class Movie {
         return fee;
     }
 
+    // DiscountCondition의  PERIOD가 명칭이 변경되면 수정이 필요함, 종류가 추가되거나 삭제되면 if 문 분기가 추가되어야함
     public boolean isDiscountable(LocalDateTime whenScreened, int sequence) {
         for (DiscountCondition condition : discountConditions) {
             if(condition.getType() == DiscountConditionType.PERIOD) {
