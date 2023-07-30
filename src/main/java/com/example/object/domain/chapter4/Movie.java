@@ -1,6 +1,5 @@
 package com.example.object.domain.chapter4;
 
-import com.example.object.domain.chapter4.DiscountCondition;
 import com.example.object.domain.chapter2.Money;
 
 import java.time.Duration;
