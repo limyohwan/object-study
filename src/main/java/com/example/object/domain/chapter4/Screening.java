@@ -15,6 +15,7 @@ public class Screening {
         this.whenScreened = whenScreened;
     }
 
+    // Movie가 수정되면 이부분도 함께 수정되어야함
     public Money calculateFee(int audienceCount) {
         switch (movie.getMovieType()) {
             case AMOUNT_DISCOUNT:
