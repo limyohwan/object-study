@@ -10,10 +10,12 @@ public class DiscountCondition {
     private LocalTime startTime;
     private LocalTime endTime;
 
+    // getType을 통해 내부에 DiscountconditionType이 포함되어 있다는 정보를 노출시킴
     public DiscountConditionType getType() {
         return type;
     }
 
+    // 속성정보에 DayOfWeek와 LocalTime을 받는다는 것을 노출시킴
     public boolean isDiscountable(DayOfWeek dayOfWeek, LocalTime time) {
         if(type != DiscountConditionType.PERIOD) {
             throw new IllegalStateException();
