@@ -74,7 +74,7 @@ public class Movie {
 
         return false;
     }
-    
+
 //    public void setMovieType(MovieType movieType) {
 //        this.movieType = movieType;
 //    }
