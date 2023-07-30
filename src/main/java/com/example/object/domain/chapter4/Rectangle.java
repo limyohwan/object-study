@@ -13,6 +13,11 @@ public class Rectangle {
         this.bottom = bottom;
     }
 
+    public void enlarge(int multiple) {
+        right *= multiple;
+        bottom *= multiple;
+    }
+
     public int getLeft() {
         return left;
     }
