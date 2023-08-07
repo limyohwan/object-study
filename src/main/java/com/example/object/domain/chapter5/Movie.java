@@ -9,12 +9,13 @@ public class Movie {
     private String title;
     private Duration runningTime;
     private Money fee;
+//    private List<OldDiscountCondition> discountConditions;
     private List<DiscountCondition> discountConditions;
     private MovieType movieType;
     private Money discountAmount;
     private double discountPercent;
-    private List<PeriodCondition> periodConditions;
-    private List<SequenceCondition> sequenceConditions;
+//    private List<PeriodCondition> periodConditions;
+//    private List<SequenceCondition> sequenceConditions;
 
     public Money calculateMovieFee(Screening screening) {
         if(isDiscountable(screening)) {
@@ -24,24 +25,28 @@ public class Movie {
         return fee;
     }
 
+    private boolean isDiscountable(Screening screening) {
+        return discountConditions.stream().anyMatch(condition -> condition.isSatisfiedBy(screening));
+    }
+
 //    private boolean isDiscountable(Screening screening) {
 //        return discountConditions.stream()
 //                .anyMatch(condition -> condition.isSatisfiedBy(screening));
 //    }
 
-    private boolean isDiscountable(Screening screening) {
-        return checkPeriodConditions(screening) || checkSequenceConditions(screening);
-    }
-
-    private boolean checkPeriodConditions(Screening screening) {
-        return periodConditions.stream()
-                .anyMatch(condition -> condition.isSatisfiedBy(screening));
-    }
-
-    private boolean checkSequenceConditions(Screening screening) {
-        return sequenceConditions.stream()
-                .anyMatch(condition -> condition.isSatisfiedBy(screening));
-    }
+//    private boolean isDiscountable(Screening screening) {
+//        return checkPeriodConditions(screening) || checkSequenceConditions(screening);
+//    }
+//
+//    private boolean checkPeriodConditions(Screening screening) {
+//        return periodConditions.stream()
+//                .anyMatch(condition -> condition.isSatisfiedBy(screening));
+//    }
+//
+//    private boolean checkSequenceConditions(Screening screening) {
+//        return sequenceConditions.stream()
+//                .anyMatch(condition -> condition.isSatisfiedBy(screening));
+//    }
 
     private Money calculateDiscountAmount() {
         switch (movieType) {
