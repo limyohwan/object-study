@@ -21,5 +21,9 @@ public abstract class DiscountPolicy {
         return Money.ZERO;
     }
 
+    public void switchConditions(List<DiscountCondition> conditions) {
+        this.conditions = conditions;
+    }
+
     abstract protected Money getDiscountAmount(Screening screening);
 }
