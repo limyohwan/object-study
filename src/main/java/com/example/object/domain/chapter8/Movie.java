@@ -30,11 +30,14 @@ public class Movie {
     }
 
     public Money calculateMovieFee(Screening screening) {
-        // 할인 정책이 없는 경우는 예외 케이스로 취급되기 때문에 지금까지 일관성 있던 협력 방식이 무너지게됨
-        if(discountPolicy == null) {
-            return fee;
-        }
-        // 업캐스팅 = 자식 클래스가 부모 클래스를 대신하는 것
+        return calculateMovieFee(screening, new AmountDiscountPolicy(Money.wons(800L),
+                new SequenceCondition(1),
+                new SequenceCondition(10),
+                new PeriodCondition(DayOfWeek.MONDAY, LocalTime.of(10, 0), LocalTime.of(11, 59)),
+                new PeriodCondition(DayOfWeek.THURSDAY, LocalTime.of(10, 0), LocalTime.of(20, 59))));
+    }
+
+    public Money calculateMovieFee(Screening screening, DiscountPolicy discountPolicy) {
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
     
