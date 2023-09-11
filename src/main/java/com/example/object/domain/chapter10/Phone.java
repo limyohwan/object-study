@@ -34,13 +34,9 @@ public class Phone {
         Money result = Money.ZERO;
 
         for (Call call : calls) {
-            result = result.plus(calculateCallFee(call));
+            result = result.plus(amount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
         }
 
         return result;
-    }
-
-    private Money calculateCallFee(Call call) {
-        return amount.times(call.getDuration().getSeconds() / seconds.getSeconds());
     }
 }
