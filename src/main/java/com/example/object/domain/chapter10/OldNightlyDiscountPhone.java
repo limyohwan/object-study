@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NightlyDiscountPhone {
+public class OldNightlyDiscountPhone {
     private static final int LATE_NIGHT_HOUR = 22;
 
     private Money nightlyAmount;
@@ -13,13 +13,13 @@ public class NightlyDiscountPhone {
     private List<Call> calls = new ArrayList<>();
     private double taxRate;
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
+    public OldNightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
     }
 
-    public NightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
+    public OldNightlyDiscountPhone(Money nightlyAmount, Money regularAmount, Duration seconds, double taxRate) {
         this.nightlyAmount = nightlyAmount;
         this.regularAmount = regularAmount;
         this.seconds = seconds;
