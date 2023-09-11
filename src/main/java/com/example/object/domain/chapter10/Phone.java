@@ -37,6 +37,10 @@ public class Phone {
         return calls;
     }
 
+    public double getTaxRate() {
+        return taxRate;
+    }
+
     public Money calculateFee() {
         Money result = Money.ZERO;
 
