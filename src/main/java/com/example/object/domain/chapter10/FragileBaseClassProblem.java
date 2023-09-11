@@ -31,4 +31,10 @@ public class FragileBaseClassProblem {
 
         Assert.isTrue(properties.getProperty("Dennis Ritchie") == null, "getProperty는 메서드 반환값이 String이 아닐시 null을 반환");
     }
+
+    public static void initInstrumentedHashSetProblem() {
+//        deprecated
+//        InstrumentedHashSet<String> languages = new InstrumentedHashSet<>();
+//        languages.addAll(Arrays.asList("Java", "Ruby", "Scala"));
+    }
 }
