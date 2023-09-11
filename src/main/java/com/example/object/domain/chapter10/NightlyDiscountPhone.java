@@ -17,22 +17,18 @@ public class NightlyDiscountPhone {
         this.regularAmount = regularAmount;
         this.seconds = seconds;
     }
-
+    
     public Money calculateFee() {
         Money result = Money.ZERO;
 
         for (Call call : calls) {
-            result = result.plus(calculateCallFee(call));
+            if(call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
+                result = result.plus(nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
+            } else {
+                result = result.plus(regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds()));
+            }
         }
 
         return result;
-    }
-
-    private Money calculateCallFee(Call call) {
-        if(call.getFrom().getHour() >= LATE_NIGHT_HOUR) {
-            return nightlyAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
-        } else {
-            return regularAmount.times(call.getDuration().getSeconds() / seconds.getSeconds());
-        }
     }
 }
