@@ -2,7 +2,7 @@ package com.example.object.domain.chapter10;
 
 import java.time.Duration;
 
-public class OldNightlyDiscountPhone2 extends Phone {
+public class OldNightlyDiscountPhone2 extends RegularPhone {
     private static final int LATE_NIGHT_HOUR = 22;
 
     private Money nightlyAmount;
