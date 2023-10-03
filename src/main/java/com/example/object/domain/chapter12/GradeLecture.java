@@ -49,6 +49,11 @@ public class GradeLecture extends Lecture {
                 .orElse(0);
     }
 
+    @Override
+    public String getEvaluationMethod() {
+        return "Grade";
+    }
+
     public static void main(String[] args) {
         GradeLecture lecture = new GradeLecture(70,
                 "객체지향 프로그래밍",
@@ -61,5 +66,7 @@ public class GradeLecture extends Lecture {
 
         System.out.println(lecture.evaluate());
         System.out.println(lecture.average("A"));
+
+        System.out.println(lecture.stats());
     }
 }

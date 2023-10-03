@@ -35,9 +35,19 @@ public class Lecture {
         return scores.size() - passCount();
     }
 
+    public String stats() {
+        return String.format("Title : %s, Evaluation Method : %s", title, getEvaluationMethod());
+    }
+
+    public String getEvaluationMethod() {
+        return "Pass or Fail";
+    }
+
     public static void main(String[] args) {
         Lecture lecture = new Lecture(70, "객체지향 프로그래밍", List.of(81, 95, 75, 50, 45));
         String evaluation = lecture.evaluate();
         System.out.println(evaluation);
+
+        System.out.println(lecture.stats());
     }
 }
