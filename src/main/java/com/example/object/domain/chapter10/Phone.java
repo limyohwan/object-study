@@ -30,4 +30,8 @@ public abstract class Phone {
     }
 
     abstract protected Money calculateCallFee(Call call);
+
+    public double getTaxRate() {
+        return taxRate;
+    }
 }
