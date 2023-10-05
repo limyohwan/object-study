@@ -14,11 +14,12 @@ public class BrokenDiscountPolicy extends DiscountPolicy {
 
     @Override
     public Money calculateDiscountAmount(Screening screening) {
-//        checkPreCondition(screening); // 기존의 사전조건
+        checkPreCondition(screening); // 기존의 사전조건
 //        checkStrongerPreCondition(screening); // 더 강력한 사전조건
 
         Money amount = screening.getMovieFee();
         checkPostCondition(amount); // 기존의 사후조건
+        checkStrongerPostCondition(amount); // 더 강력한 사후조건
         return amount;
     }
 
