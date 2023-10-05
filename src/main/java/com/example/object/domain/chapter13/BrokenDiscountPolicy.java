@@ -18,8 +18,10 @@ public class BrokenDiscountPolicy extends DiscountPolicy {
 //        checkStrongerPreCondition(screening); // 더 강력한 사전조건
 
         Money amount = screening.getMovieFee();
-        checkPostCondition(amount); // 기존의 사후조건
-        checkStrongerPostCondition(amount); // 더 강력한 사후조건
+//        checkPostCondition(amount); // 기존의 사후조건
+//        checkStrongerPostCondition(amount); // 더 강력한 사후조건
+        checkWeakerPostCondition(amount);
+
         return amount;
     }
 
