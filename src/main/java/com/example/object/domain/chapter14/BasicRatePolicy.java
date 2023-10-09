@@ -1,6 +1,5 @@
 package com.example.object.domain.chapter14;
 
-import com.example.object.domain.chapter11.Call;
 import com.example.object.domain.chapter11.Money;
 
 public abstract class BasicRatePolicy implements RatePolicy {
