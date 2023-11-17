@@ -1,6 +1,6 @@
 package com.example.object.domain.appendixB;
 
-public class SalariedEmployee {
+public class SalariedEmployee implements Employee {
     private String name;
     private Money basePay;
 
